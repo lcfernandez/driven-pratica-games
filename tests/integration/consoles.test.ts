@@ -7,7 +7,10 @@ import { faker } from "@faker-js/faker";
 
 const api = supertest(app);
 
-beforeEach(async () => { await prisma.console.deleteMany({}) });
+beforeEach(async () => {
+  await prisma.game.deleteMany();
+  await prisma.console.deleteMany();
+});
 
 describe("GET /consoles", () => {
   it("should respond with status 200 and empty array when there are no consoles created", async () => {
@@ -59,9 +62,7 @@ describe("POST /consoles", () => {
   });
 
   it("should respond with status 201 and create console when given name is unique", async () => {
-    const body = {
-      name: faker.name.lastName()
-    };
+    const body = { name: faker.name.lastName() };
 
     const response = await api.post("/consoles").send(body);
 
