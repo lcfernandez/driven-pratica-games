@@ -6,17 +6,17 @@ import supertest from "supertest";
 const api = supertest(app);
 
 beforeEach(async () => {
-  await prisma.console.deleteMany({});
+  await prisma.game.deleteMany({});
 });
 
-describe("GET /consoles", () => {
+describe("GET /games", () => {
 
 })
 
-describe("GET /consoles/:id", () => {
+describe("GET /games/:id", () => {
 
 })
 
-describe("POST /consoles", () => {
+describe("POST /games", () => {
 
 })
