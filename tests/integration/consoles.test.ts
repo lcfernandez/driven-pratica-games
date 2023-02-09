@@ -35,7 +35,24 @@ describe("GET /consoles", () => {
 })
 
 describe("GET /consoles/:id", () => {
+  it("should respond with status 404 when given console doesnt exist", async () => {
+    const response = await api.get("/consoles/0");
 
+    expect(response.status).toBe(404);
+  });
+
+  it("should respond with status 200 and with console data", async () => {
+    const newConsole = await createConsole();
+    const response = await api.get(`/consoles/${newConsole.id}`);
+
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual(
+      {
+        id: newConsole.id,
+        name: newConsole.name
+      }
+    );
+  });
 })
 
 describe("POST /consoles", () => {
