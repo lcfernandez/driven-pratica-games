@@ -1,5 +1,7 @@
 # driven-pratica-games
 
+<!-- mudar come para games-tests -->
+
 <!-- indicar para criar .env e .env.example, mudando nome dos bancod, e.g. _test, etc -->
 
 <!-- se certificar do postgres estar rodando -->
