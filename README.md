@@ -75,5 +75,5 @@
 * Teste o projeto com o comando:
 
     ```
-    npx dotenv -e .env.test npx jest
+    npm test
     ```
